@@ -34,48 +34,51 @@ const playerSelection = getPlayerChoice();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return 'tie';
+        console.log(`It\'s a tie! You both selected ${playerSelection}.`);
+        console.log('Your score: ' + playerScore);
+        console.log('Computer score: ' + computerScore);
 
     } else if   ((playerSelection === 'rock' && computerSelection === 'scissors') ||
                 (playerSelection === 'paper' && computerSelection === 'rock') || 
                 (playerSelection === 'scissors' && computerSelection === 'paper')) {
-        return 'player';
+        playerScore++;
+        console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
+        console.log('Your score: ' + playerScore);
+        console.log('Computer score: ' + computerScore);
+
     } else {
-        return ('computer');
+        computerScore++;
+        console.log(`Round lost. ${computerSelection} beats ${playerSelection}.`);
+        console.log('Your score: ' + playerScore);
+        console.log('Computer score: ' + computerScore);
+        
     }
 }  
 
-// returns result from a Best of 1.
+/* In English: I created a function called 'playRound'.  This function takes 2 arguments, playerSelection and computerSelection.  playerSelection was defined
+above as getPlayerChoice() which gives the user three option (RPS) to choose from.  computerSelection was also defined above as getComputerChoice() which has
+the computer choose RPS at random.  The rules to RPS are written as an if/else statement.*/
 
 function game() {
-
-    let result = playRound(playerSelection, computerSelection);
-    
-    if (result === 'player') {
-        playerScore++;
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`);
-        console.log('Your score: ' + playerScore);
-        console.log('Computer score: ' + computerScore);
+    while (computerScore < 5 && playerScore < 5) {
+        const computerSelection = getComputerChoice();
+        const playerSelection = getPlayerChoice();
+        console.log(playRound(playerSelection, computerSelection))
+        
+    if (playerScore === 5) {
+        console.log('Congratulations! You win!')
     }
 
-    else if (result === 'tie') {
-        console.log('It\'s a tie!  Try again!');
+    else if(computerScore === 5) {
+        console.log('Computer wins.  Better luck next time!')
     }
-
-    else {
-        computerScore++;
-        console.log(`Round lost. ${computerSelection} beats ${playerSelection}`);
-        console.log('Your score: ' + playerScore);
-        console.log('Computer score: ' + computerScore);
-    }
-
-    if (computerScore === 5) {
-        console.log('The computer won.  Better luck next time!')
-    }
-
-    else if (playerScore === 5) {
-        console.log('You win! Well done!')
     }
 }
 
-console.log(game(playRound(playerSelection, computerSelection)));
+/* In English: I created a function called 'game'. Within the function, I created a loop where the condition states that while the player and computer's
+score is less than 5, continue to loop the following code.  Inside of the loop, I have the computer and player make new selections each iteration and
+then the console.log logs the playRound function.  There is also an if/else statment which declares the winner to whoever reaches a scores of 5 first.*/
+
+game();
+
+/* I learned that when calling a function by itself, you do not need to use console.log();. */ 
