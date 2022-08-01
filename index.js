@@ -4,9 +4,6 @@ paper, and scissors, and in return the computer will choose rock, paper, or scis
 at random.  After the user inputs their choice and the computer randomly makes its
 choice, a pop-up will appear to declare the winner.*/
 
-// Step one: Create a function that has the computer choose between three options
-// at random.
-
 let playerScore = 0;
 let computerScore = 0;
 
@@ -17,73 +14,58 @@ function getComputerChoice() {
     return cChoices;
 }
 
+function getPlayerChoice() {
+    const ask = prompt('Choose your weapon: Rock, Paper, or Scissors?').toLowerCase();
+    return ask;
+}
+
+const computerSelection = getComputerChoice();
+const playerSelection = getPlayerChoice();
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return ('Draw! Go again!');
+        return 'tie';
+
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return ('Lost!  Computer chose paper.');
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return ('Winner! Computer chose scissors.');
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return ('Winner! Computer chose rock.');
+        return 'computer';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return ('Lost! Computer chose scissors.');
+        return 'computer';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return ('Lost! Computer chose rock.');
+        return 'computer';
+
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'player';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return 'player';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return ('Winner! Computer chose paper.')
+        return 'player';
+
     } else {
         return ('Input invalid.  Please choose rock, paper, or scissors.');
     }
 }
 
+let result = playRound(playerSelection, computerSelection);
+
 function game() {
-    playRound(playerSelection, computerSelection); {
-        if (playerSelection === computerSelection) {
-            return ('Draw! Go again!');
-    } 
-        else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        computerScore++;
-        console.log(playerScore);
-        console.log(computerScore);
-        return ('Lost!  Computer chose paper.');
+    while (playerScore < 3 || computerScore < 3) {
+        playRound(playerSelection, computerSelection);
+        if (result === 'player') {
+            playerScore++;
+            alert('You win this round!');
+            console.log(`Your score: ${playerScore}`);
+            console.log(`Computer score: ${computerScore}`);
+    }   else if (result === 'computer') {
+            computerScore++;
+            alert('Computer wins this round!');
+            console.log(`Your score: ${playerScore}`);
+            console.log(`Computer score: ${computerScore}`);
+    }   else if (result === 'tie') {
+            console.log('You both picked the same option.  Try again!');
     }
-        else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerScore++;
-        console.log('Your Score: ' + playerScore);
-        console.log('Computer Score: ' + computerScore);
-        return ('Winner! Computer chose scissors.');
-    }
-        else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++;
-        console.log('Your Score: ' + playerScore);
-        console.log('Computer Score: ' + computerScore);
-        return ('Winner! Computer chose rock.');
-    }
-        else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        computerScore++;
-        console.log(playerScore);
-        console.log(computerScore);
-        return ('Lost! Computer chose scissors.');
-    }
-        else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        computerScore++;
-        console.log(playerScore);
-        console.log(computerScore);
-        return ('Lost! Computer chose rock.');
-    }
-        else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore++;
-        console.log('Your Score: ' + playerScore);
-        console.log('Computer Score: ' + computerScore);
-        return ('Winner! Computer chose paper.')
-    }
-        else {
-        return ('Input invalid.  Please choose rock, paper, or scissors.');
-    }
+
+    return result;
 }
 }
 
-const playerSelection = prompt('Choose your weapon: Rock, Paper, or Scissors?', '');
-const computerSelection = getComputerChoice();
-console.log(game(playRound(playerSelection.toLowerCase(), computerSelection.toLowerCase())));
+console.log(game());
