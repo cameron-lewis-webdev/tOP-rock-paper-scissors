@@ -11,4 +11,4 @@ What I learned:
 4) How to call a function within a function.
 5) How to use a while loop.
 
-You can view it here: cameron-lewis-webdev.github.io/tOP-rock-paper-scissors
+You can view it here: https://cameron-lewis-webdev.github.io/tOP-rock-paper-scissors
