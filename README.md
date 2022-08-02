@@ -10,3 +10,5 @@ What I learned:
    correcty, it can be recognized whethr or not the user capitalizes any letters or not.
 4) How to call a function within a function.
 5) How to use a while loop.
+
+You can view it here: cameron-lewis-webdev.github.io/tOP-rock-paper-scissors
