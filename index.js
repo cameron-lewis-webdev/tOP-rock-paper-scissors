@@ -81,8 +81,4 @@ then the console.log logs the playRound function.  There is also an if/else stat
 
 game();
 
-<<<<<<< HEAD
 /* I learned that when calling a function by itself, you do not need to use console.log();. */ 
-=======
-/* I learned that when calling a function by itself, you do not need to use console.log();. */ 
->>>>>>> c74ae72b5d9b43eef7f0c2a331df17fb5ce515da
