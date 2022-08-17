@@ -10,15 +10,21 @@
 <body>
     <!-- Header -->
     <div class="header-container">
-        <h1>Choose your weapon: Rock, Paper, or Scissors.</h1>
+        <h1>Welcome to Rock, Paper, or Scissors!</h1>
+        <h2>First player to 5 wins! Click on either the Rock, Paper, or Scissors button to make your selection.</h2>
     </div>
 
     <!-- Game section.  The user will see three buttons labeled 'rock', 'paper', and 'scissors'. -->
     <section class="game-section">
         <div class="player-container">
-            <button class="player-button" id="player-rock">Rock</button>
-            <button class="player-button" id="player-paper">Paper</button>
-            <button class="player-button" id="player-scissors">Scissors</button>
+            <div class="selection-title">
+                <p>Choose your weapon!</p>
+            </div>
+            <div class="user-selections">
+                <button class="player-button" id="player-rock">Rock</button>
+                <button class="player-button" id="player-paper">Paper</button>
+                <button class="player-button" id="player-scissors">Scissors</button>    
+            </div>
         </div>
 
         <div class="computer-container">
@@ -39,8 +45,18 @@
     <section class="results-section">
         <div class="results-container">
             <p class="results-display" id="results">Result: </p>
-            <p class="player-score" id="pScore">Your score: 0</p>
-            <p class="computer-score" id="cScore">Computer score: 0</p>
+            <div class="score-display-container">
+                <p class="player-score" id="pScore">Your score: 0</p>
+                <p class="computer-score" id="cScore">Computer score: 0</p>
+            </div>
+            <p class="ties-score" id="ties">Ties: 0</p>
+        </div>
+    </section>
+
+    <!-- Reset section.  Button created.  When clicked, will reset scores to 0 and reset selections. -->
+    <section class="reset-section">
+        <div class="reset-container">
+            <button class="reset-button" id="reset-btn">Reset</button>
         </div>
     </section>
 
