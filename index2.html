@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revisiting Rock Paper Scissors</title>
-  <link rel="stylesheet" href="./styles2.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Revisited</title>
+    <link rel="stylesheet" href="/styles2.css">
 </head>
-
 <body>
+    <!-- Header -->
+    <div class="header-container">
+        <h1>Choose your weapon: Rock, Paper, or Scissors.</h1>
+    </div>
 
-<!-- Header instructing the user to choose between rock, paper, and scissors -->
-<div class="header-container">
-  <h1>Choose your weapon.  Rock? Paper? or Scissors?</h1>
-</div>
+    <!-- Game section.  The user will see three buttons labeled 'rock', 'paper', and 'scissors'. -->
+    <section class="game-section">
+        <div class="player-container">
+            <button class="player-button" id="player-rock">Rock</button>
+            <button class="player-button" id="player-paper">Paper</button>
+            <button class="player-button" id="player-scissors">Scissors</button>
+        </div>
 
-<!-- User's choices -->
-<div class="choice-container">
-  <p class="user-instructions">Choose your weapon but clicking on one of the three choices.</p>
-  <button class="weapon-choice">Rock</button>
-  <button class="weapon-choice">Paper</button>
-  <button class="weapon-choice">Scissors</button>
-</div>
+        <div class="computer-container">
+            <div class="computer-title">
+                <h2>Computer</h2>
+            </div>
 
-<!-- Computer's choice display -->
-<div class="choice-container">
-  <p class="computer-container-label">Computer</p>
-  <button class="weapon-choice">Rock</button>
-  <button class="weapon-choice">Paper</button>
-  <button class="weapon-choice">Scissors</button>
-</div>
+            <div>
+                <button class="computer-button" id="computer-rock">Rock</button>
+                <button class="computer-button" id="computer-paper">Paper</button>
+                <button class="computer-button" id="computer-scissors">Scissors</button>    
+            </div>
+        </div>
+    </section>
 
-<!-- Scoreboard -->
-<div class="score-container">
-  <div class="player-score-container">
-    <p class="user-score">You're Score: </p>
-  </div>
+    <!-- Results section.  Result of each selection will be displayed along with player and 
+    computer score -->
+    <section class="results-section">
+        <div class="results-container">
+            <p class="results-display" id="results">Result: </p>
+            <p class="player-score" id="pScore">Your score: 0</p>
+            <p class="computer-score" id="cScore">Computer score: 0</p>
+        </div>
+    </section>
 
-  <div class="computer-score-container">
-    <p class="computer-score">Computer Score: </p>
-  </div>
-</div>
+    <!-- main.js -->
+    <script src="/main2.js"></script>
 </body>
 </html>
