@@ -38,7 +38,7 @@ playGame = (playerSelection, computerSelection) => {
         if (computerSelection === 'rock') {
             playerRock.style.backgroundColor = 'yellow';
             computerRock.style.backgroundColor = 'yellow';
-            results.append('It\'s a tie! Try again!');
+            results.textContent = 'Result: It\'s a tie! Try again!';
 
             playerPaper.style.backgroundColor = 'transparent';
             computerPaper.style.backgroundColor = 'transparent';
@@ -51,7 +51,7 @@ playGame = (playerSelection, computerSelection) => {
             playerScore++;
             playerRock.style.backgroundColor = 'green';
             computerScissors.style.backgroundColor = 'red';
-            results.append('You win! The computer chose scissors.');
+            results.textContent = 'Result: You win! The computer chose scissors.';
             pScore.textContent = `Your score: ${playerScore}`;
 
             playerPaper.style.backgroundColor = 'transparent';
@@ -64,7 +64,7 @@ playGame = (playerSelection, computerSelection) => {
             computerScore++;
             playerRock.style.backgroundColor = 'red';
             computerPaper.style.backgroundColor = 'green';
-            results.append('Lost! The computer chose paper.');
+            results.textContent = 'Result: Lost! The computer chose paper.';
             cScore.textContent = `Computer score: ${computerScore}`;
 
             playerPaper.style.backgroundColor = 'transparent';
@@ -81,23 +81,38 @@ playGame = (playerSelection, computerSelection) => {
         if (computerSelection === 'paper') {
             playerPaper.style.backgroundColor = 'yellow';
             computerPaper.style.backgroundColor = 'yellow';
-            results.append('It\'s a tie! Try again!');
+            results.textContent = 'Result: It\'s a tie! Try again!';
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerScissors.style.backgroundColor = 'transparent';
+            computerRock.style.backgroundColor = 'transparent';
+            computerScissors.style.backgroundColor = 'transparent';
         }
 
         else if (computerSelection === 'rock') {
             playerScore++;
             playerPaper.style.backgroundColor = 'green';
             computerRock.style.backgroundColor = 'red';
-            results.append('You win! The computer chose rock.');
+            results.textContent = 'Result: You win! The computer chose rock.';
             pScore.textContent = `Your score: ${playerScore}`
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerScissors.style.backgroundColor = 'transparent';
+            computerPaper.style.backgroundColor = 'transparent';
+            computerScissors.style.backgroundColor = 'transparent';
         }
 
         else {
             computerScore++;
             playerPaper.style.backgroundColor = 'red';
             computerScissors.style.backgroundColor = 'green';
-            results.append('Lost! The computer chose scissors.');
+            results.textContent = 'Result: Lost! The computer chose scissors.';
             cScore.textContent = `Computer score: ${computerScore}`;
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerScissors.style.backgroundColor = 'transparent';
+            computerRock.style.backgroundColor = 'transparent';
+            computerPaper.style.backgroundColor = 'transparent';
         }
     });
 
@@ -108,23 +123,38 @@ playGame = (playerSelection, computerSelection) => {
         if (computerSelection === 'scissors') {
             playerScissors.style.backgroundColor = 'yellow';
             computerScissors.style.backgroundColor = 'yellow';
-            results.append('It\'s a tie! Try again!');
+            results.textContent = 'Result: It\'s a tie! Try again!';
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerPaper.style.backgroundColor = 'transparent';
+            computerRock.style.backgroundColor = 'transparent';
+            computerPaper.style.backgroundColor = 'transparent';
         }
 
         else if (computerSelection === 'paper') {
             playerScore++;
             playerScissors.style.backgroundColor = 'green';
             computerPaper.style.backgroundColor = 'red';
-            results.append('You win! The computer chose paper.');
-            pScore.textContent = `Your score: ${playerScore}`
+            results.textContent = 'Result: You win! The computer chose paper.';
+            pScore.textContent = `Your score: ${playerScore}`;
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerPaper.style.backgroundColor = 'transparent';
+            computerRock.style.backgroundColor = 'transparent';
+            computerScissors.style.backgroundColor = 'transparent';
         }
 
         else {
             computerScore++;
             playerScissors.style.backgroundColor = 'red';
             computerRock.style.backgroundColor = 'green';
-            results.append('Lost! The computer chose rock.');
+            results.textContent = 'Result: Lost! The computer chose rock.';
             cScore.textContent = `Computer score: ${computerScore}`;
+
+            playerRock.style.backgroundColor = 'transparent';
+            playerPaper.style.backgroundColor = 'transparent';
+            computerPaper.style.backgroundColor = 'transparent';
+            computerScissors.style.backgroundColor = 'transparent';
         }
     });
 }
