@@ -3,11 +3,17 @@
   padding: 0;
 }
 
+body {
+background-image: url(./pictures/background.jpg);
+color: white;
+}
+
 .header-container {
   margin: 0 auto;
   width: 70%;
   text-align: center;
   padding: 20px 0px;
+  font-family: silkscreen;
 }
 
 .header-container h2 {
@@ -15,30 +21,37 @@
 }
 
 .player-container {
-  border: 1px solid black;
   margin: 0 auto;
   width: 60%;
   text-align: center;
 }
 
 .selection-title {
-  font-size: 28px;
-  color: red;
+  font-size: 32px;
+  color: rgb(119, 189, 230);
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-family: silkscreen;
 }
 
-.player-button, .computer-button {
+.player-button, .computer-button, .reset-button {
   margin: 0px 20px;
   padding: 10px 10px;
-  border: 2px solid black;
   border-radius: 6px;
   margin-bottom: 20px;
+  color: white;
+  border: 2px solid white;
+  background-color: transparent;
+  font-family: silkscreen;
+  font-size: 16px;
+}
+
+.player-button:hover {
+  background-color: rgb(128, 59, 14)
 }
 
 .computer-container, .results-container {
-  border: 1px solid black;
   text-align: center;
   width: 60%;
   margin: 0 auto;
@@ -48,20 +61,32 @@
 .computer-title h2 {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: silkscreen;
+  font-size: 30px;
+  color: red;
 }
 
 .results-container {
   width: 70%;
   padding: 20px 20px;
 }
+
 .results-display {
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .score-display-container {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 10px;
+  font-family: silkscreen;
 }
 
 .reset-container {
@@ -70,7 +95,6 @@
 
 .reset-button {
   padding: 10px 20px;
-  border: 2px solid black;
   margin-top: 20px;
   border-radius: 6px;
 }

@@ -17,6 +17,7 @@ let playerRock = document.querySelector('#player-rock');
 let playerPaper = document.querySelector('#player-paper');
 let playerScissors = document.querySelector('#player-scissors');
 
+
 // Computer's selections.
 let computerRock = document.querySelector('#computer-rock');
 let computerPaper = document.querySelector('#computer-paper');
@@ -45,10 +46,10 @@ let enableButtons = () => {
 // Function to check if there is a winner.
 let checkScore = () => {
     if (playerScore === 5) {
-        results.textContent = (`Result: Congratulations! You beat the computer with a score of ${playerScore} to ${computerScore}! Click the reset button to play again.`);
+        results.textContent = (`Congratulations! You beat the computer with a score of ${playerScore} to ${computerScore}! Click the reset button to play again.`);
         disableButtons ();
     }  else if (computerScore === 5) {
-        results.textContent = (`Result: Oof! The computer wins with a score of ${computerScore} to ${playerScore}.  Click the reset button to try again!`);
+        results.textContent = (`Oof! The computer wins with a score of ${computerScore} to ${playerScore}.  Click the reset button to try again!`);
         disableButtons ();
     }
 }
@@ -64,7 +65,7 @@ reset.addEventListener('click', () => {
     ties = 0;
     tScore.textContent = ('Ties: 0');
 
-    results.textContent = ('Result: ');
+    results.textContent = ('');
 
     playerRock.style.backgroundColor = 'transparent';
     playerPaper.style.backgroundColor = 'transparent';
@@ -88,9 +89,9 @@ playGame = (playerSelection, computerSelection) => {
 
         if (computerSelection === 'rock') {
             ties++;
-            playerRock.style.backgroundColor = 'yellow';
-            computerRock.style.backgroundColor = 'yellow';
-            results.textContent = 'Result: It\'s a tie! Try again!';
+            playerRock.style.backgroundColor = '#a8540e';
+            computerRock.style.backgroundColor = '#a8540e';
+            results.textContent = 'It\'s a tie! Try again!';
             tScore.textContent = `Ties: ${ties}`;
 
             playerPaper.style.backgroundColor = 'transparent';
@@ -103,7 +104,7 @@ playGame = (playerSelection, computerSelection) => {
             playerScore++;
             playerRock.style.backgroundColor = 'green';
             computerScissors.style.backgroundColor = 'red';
-            results.textContent = 'Result: You win! The computer chose scissors.';
+            results.textContent = 'You win! The computer chose scissors.';
             pScore.textContent = `Your score: ${playerScore}`;
 
             playerPaper.style.backgroundColor = 'transparent';
@@ -118,7 +119,7 @@ playGame = (playerSelection, computerSelection) => {
             computerScore++;
             playerRock.style.backgroundColor = 'red';
             computerPaper.style.backgroundColor = 'green';
-            results.textContent = 'Result: Lost! The computer chose paper.';
+            results.textContent = 'Lost! The computer chose paper.';
             cScore.textContent = `Computer score: ${computerScore}`;
 
             playerPaper.style.backgroundColor = 'transparent';
@@ -136,9 +137,9 @@ playGame = (playerSelection, computerSelection) => {
 
         if (computerSelection === 'paper') {
             ties++;
-            playerPaper.style.backgroundColor = 'yellow';
-            computerPaper.style.backgroundColor = 'yellow';
-            results.textContent = 'Result: It\'s a tie! Try again!';
+            playerPaper.style.backgroundColor = '#a8540e';
+            computerPaper.style.backgroundColor = '#a8540e';
+            results.textContent = 'It\'s a tie! Try again!';
             tScore.textContent = `Ties: ${ties}`;
 
             playerRock.style.backgroundColor = 'transparent';
@@ -151,7 +152,7 @@ playGame = (playerSelection, computerSelection) => {
             playerScore++;
             playerPaper.style.backgroundColor = 'green';
             computerRock.style.backgroundColor = 'red';
-            results.textContent = 'Result: You win! The computer chose rock.';
+            results.textContent = 'You win! The computer chose rock.';
             pScore.textContent = `Your score: ${playerScore}`
 
             playerRock.style.backgroundColor = 'transparent';
@@ -166,7 +167,7 @@ playGame = (playerSelection, computerSelection) => {
             computerScore++;
             playerPaper.style.backgroundColor = 'red';
             computerScissors.style.backgroundColor = 'green';
-            results.textContent = 'Result: Lost! The computer chose scissors.';
+            results.textContent = 'Lost! The computer chose scissors.';
             cScore.textContent = `Computer score: ${computerScore}`;
 
             playerRock.style.backgroundColor = 'transparent';
@@ -184,9 +185,9 @@ playGame = (playerSelection, computerSelection) => {
 
         if (computerSelection === 'scissors') {
             ties++;
-            playerScissors.style.backgroundColor = 'yellow';
-            computerScissors.style.backgroundColor = 'yellow';
-            results.textContent = 'Result: It\'s a tie! Try again!';
+            playerScissors.style.backgroundColor = '#a8540e';
+            computerScissors.style.backgroundColor = '#a8540e';
+            results.textContent = 'It\'s a tie! Try again!';
             tScore.textContent = `Ties: ${ties}`;
 
             playerRock.style.backgroundColor = 'transparent';
@@ -199,7 +200,7 @@ playGame = (playerSelection, computerSelection) => {
             playerScore++;
             playerScissors.style.backgroundColor = 'green';
             computerPaper.style.backgroundColor = 'red';
-            results.textContent = 'Result: You win! The computer chose paper.';
+            results.textContent = 'You win! The computer chose paper.';
             pScore.textContent = `Your score: ${playerScore}`;
 
             playerRock.style.backgroundColor = 'transparent';
@@ -214,7 +215,7 @@ playGame = (playerSelection, computerSelection) => {
             computerScore++;
             playerScissors.style.backgroundColor = 'red';
             computerRock.style.backgroundColor = 'green';
-            results.textContent = 'Result: Lost! The computer chose rock.';
+            results.textContent = 'Lost! The computer chose rock.';
             cScore.textContent = `Computer score: ${computerScore}`;
 
             playerRock.style.backgroundColor = 'transparent';
