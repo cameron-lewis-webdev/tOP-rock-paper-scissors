@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS Revisited</title>
-    <link rel="stylesheet" href="/styles2.css">
+    <link rel="stylesheet" href="./styles2.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -44,12 +49,26 @@
     computer score -->
     <section class="results-section">
         <div class="results-container">
-            <p class="results-display" id="results">Result: </p>
-            <div class="score-display-container">
-                <p class="player-score" id="pScore">Your score: 0</p>
-                <p class="computer-score" id="cScore">Computer score: 0</p>
+
+            <div>
+                <p class="results-display" id="results"></p>
             </div>
-            <p class="ties-score" id="ties">Ties: 0</p>
+
+            <div class="score-display-container">
+                <div class="scoreboard-title">
+                    <h2>Scoreboard</h2>
+                </div>
+
+                <div class="scores-container">
+                    <p class="player-score" id="pScore">Your score: 0</p>
+                    <p class="computer-score" id="cScore">Computer score: 0</p>    
+                </div>
+
+                <div class="ties-container">
+                    <p class="ties-score" id="ties">Ties: 0</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -61,6 +80,6 @@
     </section>
 
     <!-- main.js -->
-    <script src="/main2.js"></script>
+    <script src="./main2.js"></script>
 </body>
 </html>
